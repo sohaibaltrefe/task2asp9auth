@@ -1,0 +1,47 @@
+﻿@model IEnumerable<User>
+
+@{
+    ViewData["Title"] = "index";
+}
+<a href="/User/Register" class="btn btn-outline-success">New user</a>
+<h1 class="text-center text-capitalize">All user not active </h1>
+<table class=" table ">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(Model => Model.Id)</td>
+            <td>@Html.DisplayNameFor(Model => Model.UserName)</td>
+            <td>@Html.DisplayNameFor(Model => Model.Rolename)</td>
+            <td>@Html.DisplayNameFor(Model => Model.Password)</td>
+            <td>@Html.DisplayNameFor(Model => Model.IsActive)</td>
+
+            <td>Action</td>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.UserName</td>
+                <td>@item.Rolename</td>
+                <td>@item.Password</td>
+                <td>@item.IsActive</td>
+
+                <td>
+                    
+                    <a class="btn btn-primary" asp-controller="User" asp-action="Edit" asp-route-Id="@item.Id">change active</a>
+                </td>
+
+
+            </tr>
+
+
+        }
+
+
+    </tbody>
+
+</table>

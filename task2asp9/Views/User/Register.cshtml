@@ -1,0 +1,26 @@
+﻿@model User
+
+
+<a href="/User/Index" class="btn btn-outline-secondary ">Show User</a>
+
+
+<form asp-controller="User" asp-action="Register">
+    <div class="my-3">
+        <label asp-for="UserName">Name</label>
+        <input asp-for="UserName" class="form-control" />
+    </div>
+
+    <div class="my-3">
+        <label asp-for="Password">Password</label>
+        <input asp-for="Password" class="form-control" />
+    </div>
+    <div class="my-3">
+        <label asp-for="Rolename">Rolename</label>
+        <input asp-for="Rolename" class="form-control" />
+    </div>
+
+    <button class="btn btn-outline-primary">Register</button>
+
+</form>
+
+

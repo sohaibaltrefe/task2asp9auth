@@ -49,10 +49,10 @@ namespace task2asp9.Controllers
         public IActionResult Edit(int id)
         {
 
-            var emp = context.users.Find(id);
-            emp.IsActive = true;
+            var user = context.users.Find(id);
+            user.IsActive = true;
             context.SaveChanges();
-            return RedirectToAction("Index",emp);
+            return RedirectToAction("Index", user);
 
         }
     }
